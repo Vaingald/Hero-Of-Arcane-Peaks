@@ -13,4 +13,5 @@ func _on_Control_signal_option_selected(index):
 		0:
 			gameobject.savefile = savefileinputbox.get_text()
 			get_tree().change_scene(gameobject.get_level(1))
-			
+		1:
+			get_tree().change_scene("res://UI/menu_difficulty.tscn")

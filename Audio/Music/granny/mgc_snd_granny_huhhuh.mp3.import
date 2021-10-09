@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mgc_snd_granny_huhhuh.mp3-3e452831ddb7c05f08108a8a4e5c54ed.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/granny/mgc_snd_granny_huhhuh.mp3"
+dest_files=[ "res://.import/mgc_snd_granny_huhhuh.mp3-3e452831ddb7c05f08108a8a4e5c54ed.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

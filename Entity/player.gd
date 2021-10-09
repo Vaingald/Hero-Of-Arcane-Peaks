@@ -23,7 +23,6 @@ func damage():
 	if hp > 0:
 		hp -= 1
 		sfxdamage.play()
-		gameobject.hp_indicator.frame = hp
 		get_tree().paused = true #Pausing game after damage for a brief period
 		#Engine.time_scale /= 8
 		$AfterdamageTimer.start()
@@ -43,3 +42,6 @@ func _on_AfterdamageTimer_timeout():
 func _on_lGrazeArea_area_entered(area):
 	sfxgraze.play()
 	gameobject.grazescore += 1
+
+func _process(delta):
+	gameobject.hp_indicator.frame = hp

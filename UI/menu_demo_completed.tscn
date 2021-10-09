@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://UI/TextOptionSystem/textmenubase.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/UI/liito-hervoton-mummo.png" type="Texture" id=2]
+[ext_resource path="res://fonts/editor_dynfont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://UI/menu_gameover.gd" type="Script" id=4]
+[ext_resource path="res://Entity/MusicManager.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/seikebold.tres" type="Theme" id=6]
+[ext_resource path="res://Audio/Music/granny/mgc_snd_granny_verenpaine.mp3" type="AudioStream" id=7]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+optionvboxpath = NodePath("VBoxContainer")
+options = [ "Return to menu" ]
+defaultindex = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_left = 0.00294952
+anchor_top = -0.000983175
+anchor_right = 0.00294952
+anchor_bottom = -0.000983175
+margin_left = -133.416
+margin_top = -9.93159
+margin_right = 569.584
+margin_bottom = 485.068
+color = Color( 0.47451, 0.227451, 0.501961, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="liito_logo_hd" type="Sprite" parent="."]
+position = Vector2( 243.833, 245.978 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 161.657
+margin_top = 151.937
+margin_right = 326.657
+margin_bottom = 165.937
+rect_pivot_offset = Vector2( 130.437, 0 )
+custom_fonts/font = ExtResource( 3 )
+text = "(The granny is dancing with you)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 102.515
+margin_top = 94.8619
+margin_right = 379.515
+margin_bottom = 133.862
+rect_pivot_offset = Vector2( 130.437, 0 )
+theme = ExtResource( 6 )
+text = "congratulations!
+TUTORIAL/DEMO COMPLETED!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MusicManager" parent="." instance=ExtResource( 5 )]
+audiopath = "res://Audio/seikes_motif3.wav"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 240, 240 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 110.0
+margin_top = 291.0
+margin_right = 357.0
+margin_bottom = 447.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -10.0
+autoplay = true
+
+[connection signal="signal_option_selected" from="." to="VBoxContainer" method="_on_Control_signal_option_selected"]

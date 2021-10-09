@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Entity/player_controller.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/WingFocused.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Audio/skr_damage1.wav" type="AudioStream" id=5]
 [ext_resource path="res://Audio/skr_grazesound1.wav" type="AudioStream" id=6]
 [ext_resource path="res://Audio/skr_gameover1.wav" type="AudioStream" id=7]
+[ext_resource path="res://Audio/skr_loud_basszoom_clock.wav" type="AudioStream" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -49,7 +50,7 @@ animation = "fly"
 
 [node name="lArea" type="Area2D" parent="cLeft"]
 collision_layer = 2
-collision_mask = 4
+collision_mask = 8204
 
 [node name="cLeft" type="CollisionShape2D" parent="cLeft/lArea"]
 position = Vector2( 0, -0.049 )
@@ -77,8 +78,11 @@ stream = ExtResource( 6 )
 [node name="sfxGameover" type="AudioStreamPlayer" parent="sfx"]
 stream = ExtResource( 7 )
 
+[node name="sfxBoomer" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 8 )
+
 [node name="AfterdamageTimer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.35
 
 [node name="PregameoverTimer" type="Timer" parent="."]
 wait_time = 0.5

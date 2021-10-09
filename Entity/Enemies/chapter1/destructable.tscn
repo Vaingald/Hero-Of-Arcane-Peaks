@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sprites/skr_destructable.png" type="Texture" id=1]
+[ext_resource path="res://Entity/Enemies/chapter1/destructable.gd" type="Script" id=2]
+[ext_resource path="res://Audio/liito3_shoot.wav" type="AudioStream" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="destructable" type="KinematicBody2D"]
+modulate = Color( 0, 0, 0, 1 )
+script = ExtResource( 2 )
+
+[node name="sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[node name="DamageableArea" type="Area2D" parent="."]
+collision_layer = 36
+collision_mask = 4096
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageableArea"]
+shape = SubResource( 1 )
+
+[node name="sfxDamaged" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="area_entered" from="DamageableArea" to="." method="_on_DamageableArea_area_entered"]

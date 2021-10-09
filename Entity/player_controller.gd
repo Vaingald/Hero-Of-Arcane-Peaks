@@ -12,6 +12,10 @@ var updownenabled = true
 
 var velocity = Vector2()
 
+onready var gameobject = get_node("/root/MainGameobject")
+
+var pausemenuscene = preload("res://UI/menu_pause.tscn")
+
 var scn_bullet = preload("res://Entity/bullet1_player.tscn")
 
 func _ready():
@@ -43,7 +47,7 @@ func get_input():
 			velocity.x += 1
 		else:
 			velocity.x -= 1
-	
+		
 	if Input.is_action_pressed('mv_down'):
 		velocity.y += 1 * int(updownenabled)
 	
@@ -54,17 +58,26 @@ func get_input():
 		var bullet = scn_bullet.instance()
 		get_node("../").add_child(bullet)
 		bullet.set_position(Vector2(get_position()))
-		bullet.velocity = Vector2(0, -16)
-	if Input.is_action_pressed("special_attack"):
-		var enemy_bullets = get_tree().get_nodes_in_group("enemy_bullet")
-		for i in range (0, enemy_bullets.size()):
-			enemy_bullets[i].queue_free()
-	#if Input.is_action_pressed('shoot'):
-		# Bullet instantiation happens in the main_gameobject script
+		bullet.velocity = Vector2(0 + rand_range(-1, 1), -16)
 		
+	if Input.is_action_just_pressed("special_attack"):
+		var enemy_bullets = get_tree().get_nodes_in_group("enemy_bullet")
+		if gameobject.grazescore >= 20:
+			gameobject.grazescore -= 10
+			for i in range (0, enemy_bullets.size()):
+				enemy_bullets[i].velocity *= -2
+				enemy_bullets[i].modulate = Color(0.29, 0.56, 0.66, 0.2)
+				enemy_bullets[i].get_node("Area2D/CollisionShape2D").disabled = true
+				#get_tree().paused = true
+				get_node("../sfx/sfxBoomer").play()
+				#get_node("../AfterdamageTimer").start()
+				
+		
+	
 	velocity = velocity.normalized() * speed
 	
 func _physics_process(_delta):
 	#global.
 	get_input()
+	velocity *= _delta * 60
 	velocity = move_and_slide(velocity)

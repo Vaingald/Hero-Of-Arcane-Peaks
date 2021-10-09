@@ -1,12 +1,22 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Entity/MusicManager.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entity/Enemies/chapter1/mirrorblaster.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/BG/layer2grayt.png" type="Texture" id=3]
 [ext_resource path="res://Entity/main_playarea.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Entity/Enemies/chapter1/destructable.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Audio/Music/ost_sunrays.wav" type="AudioStream" id=6]
+[ext_resource path="res://UI/seikebold.tres" type="Theme" id=7]
+[ext_resource path="res://Audio/skr_mummotrollaa.wav" type="AudioStream" id=8]
+[ext_resource path="res://fonts/biglabel.tres" type="DynamicFont" id=9]
+[ext_resource path="res://Sprites/liito2-bullet1.png" type="Texture" id=10]
+[ext_resource path="res://Entity/trollarea.gd" type="Script" id=11]
+[ext_resource path="res://Entity/scenechanger_area.tscn" type="PackedScene" id=13]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 22.2395, 26.3697 )
+
+[node name="c1_lvl1" type="Node2D"]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 244.199, 288.06 )
@@ -45,7 +55,7 @@ motion_mirroring = Vector2( 480, 270 )
 
 [node name="Sprite" type="Sprite" parent="Playarea/Node2D/ParallaxBackground/ParallaxLayer"]
 modulate = Color( 0.270588, 0.643137, 0.592157, 0.0705882 )
-position = Vector2( -643.942, -31774.4 )
+position = Vector2( -644.833, -31773.5 )
 z_index = -100
 texture = ExtResource( 3 )
 centered = false
@@ -69,159 +79,453 @@ region_rect = Rect2( 8, 0, 960, 32600 )
 [node name="Enemies" type="Node" parent="."]
 
 [node name="mirrorblaster" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 108, -1874.51 )
-interval = 0.05
-addmovement = Vector2( 20, -20 )
-bulletspeed = 0.1
-
-[node name="mirrorblaster6" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 116, -2342.9 )
-addmovement = Vector2( 50, 0 )
-
-[node name="mirrorblaster7" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 100, -2419.82 )
-addmovement = Vector2( 50, 0 )
-
-[node name="mirrorblaster8" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 106, -2492.18 )
-addmovement = Vector2( 50, 0 )
+position = Vector2( 141.999, -2068.71 )
+interval = 0.2
+addmovement = Vector2( 0, 2 )
+bulletspeed = 1.5
 
 [node name="mirrorblaster9" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 378.618, -2846.53 )
-addmovement = Vector2( -50, 0 )
+position = Vector2( 149.999, -2138.52 )
+interval = 0.2
+addmovement = Vector2( 0, 2 )
+bulletspeed = 1.5
 
-[node name="mirrorblaster10" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 378.618, -2921.45 )
-addmovement = Vector2( -50, 0 )
-
-[node name="mirrorblaster11" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 378.618, -2993.81 )
-addmovement = Vector2( -50, 0 )
-
-[node name="mirrorblaster12" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 244.199, -3672.67 )
-interval = 0.02
-addmovement = Vector2( 0, 20 )
-bulletspeed = 0.3
-
-[node name="mirrorblaster14" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 92, -3862.23 )
-interval = 0.5
-addmovement = Vector2( 0, 20 )
-bulletspeed = 2.0
-
-[node name="mirrorblaster15" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 126, -3862.23 )
-interval = 0.5
-addmovement = Vector2( 0, 20 )
-bulletspeed = 2.0
-
-[node name="mirrorblaster16" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 154.294, -3862.23 )
-interval = 0.5
-addmovement = Vector2( 0, 20 )
-bulletspeed = 2.0
-
-[node name="mirrorblaster17" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 198.857, -3862.23 )
-interval = 0.5
-addmovement = Vector2( 0, 20 )
-bulletspeed = 2.0
-
-[node name="mirrorblaster18" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 240.938, -3862.23 )
-interval = 0.5
-addmovement = Vector2( 0, 20 )
-bulletspeed = 2.0
+[node name="mirrorblaster8" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 260.083, -1455.06 )
+interval = 0.2
+addmovement = Vector2( 0, 2 )
+bulletspeed = 1.5
+randmovement = 0.0
 
 [node name="mirrorblaster19" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 280.55, -3862.23 )
-interval = 0.5
-addmovement = Vector2( 0, 20 )
+position = Vector2( 267.978, -3941.88 )
+interval = 0.02
+addmovement = Vector2( 0, 2 )
 bulletspeed = 2.0
+randmovement = 0.0
+bulletpattern_name = "mblossom2"
 
 [node name="mirrorblaster20" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 316.058, -3862.23 )
-interval = 0.5
-addmovement = Vector2( 0, 20 )
+position = Vector2( 202, -4382.14 )
+interval = 0.02
+addmovement = Vector2( 40, 0 )
 bulletspeed = 2.0
-
-[node name="mirrorblaster22" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 350.543, -3862.23 )
-interval = 0.5
-addmovement = Vector2( 0, 20 )
-bulletspeed = 2.0
+randmovement = 0.0
+bulletpattern_name = "mblossom2"
 
 [node name="mirrorblaster21" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 53.285, -4484.53 )
-interval = 0.5
-addmovement = Vector2( 0, -10 )
+position = Vector2( 303.014, -4384.14 )
+interval = 0.02
+addmovement = Vector2( -40, 0 )
 bulletspeed = 2.0
-
-[node name="mirrorblaster23" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 87.285, -4484.53 )
-interval = 0.5
-addmovement = Vector2( 0, -10 )
-bulletspeed = 2.0
-
-[node name="mirrorblaster24" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 115.579, -4484.53 )
-interval = 0.5
-addmovement = Vector2( 0, -10 )
-bulletspeed = 2.0
-
-[node name="mirrorblaster25" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 160.142, -4484.53 )
-interval = 0.5
-addmovement = Vector2( 0, -10 )
-bulletspeed = 2.0
-
-[node name="mirrorblaster26" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 202.223, -4484.53 )
-interval = 0.5
-addmovement = Vector2( 0, -10 )
-bulletspeed = 2.0
-
-[node name="mirrorblaster27" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 241.835, -4484.53 )
-interval = 0.5
-addmovement = Vector2( 0, -10 )
-bulletspeed = 2.0
-
-[node name="mirrorblaster28" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 277.343, -4484.53 )
-interval = 0.5
-addmovement = Vector2( 0, -10 )
-bulletspeed = 2.0
-
-[node name="mirrorblaster29" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 311.828, -4484.53 )
-interval = 0.5
-addmovement = Vector2( 0, -10 )
-bulletspeed = 2.0
-
-[node name="mirrorblaster3" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 248.938, -219.09 )
-interval = 0.5
+randmovement = 0.0
+bulletpattern_name = "mblossom2"
 
 [node name="mirrorblaster2" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 316.058, -1907.28 )
-rotation = 2.05206
-interval = 0.05
-addmovement = Vector2( -20, -20 )
-bulletspeed = 0.1
+position = Vector2( 293.458, -1797.45 )
+interval = 0.2
+addmovement = Vector2( 0, 2 )
+bulletspeed = 1.5
 
-[node name="mirrorblaster4" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 108, -735.973 )
-rotation = 2.05206
-interval = 0.25
+[node name="mirrorblaster3" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 167.999, -2466.68 )
+interval = 0.2
+addmovement = Vector2( 0, 2 )
+bulletspeed = 1.5
 
-[node name="mirrorblaster5" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 360.585, -931.309 )
-rotation = 2.05206
-interval = 0.25
+[node name="mirrorblaster6" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 260.083, -2620.67 )
+interval = 0.2
+addmovement = Vector2( 0, 2 )
+bulletspeed = 1.5
+
+[node name="mirrorblaster7" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 240, -2905.08 )
+interval = 0.2
+addmovement = Vector2( 0, 2 )
+bulletspeed = 1.5
+
+[node name="mirrorblaster10" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 285.458, -2787.92 )
+interval = 0.2
+addmovement = Vector2( 0, 2 )
+bulletspeed = 1.5
+
+[node name="mirrorblaster11" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 176, -3158.71 )
+interval = 0.2
+addmovement = Vector2( 0, 2 )
+bulletspeed = 1.5
+
+[node name="mirrorblaster12" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 250.083, -3138.71 )
+interval = 0.2
+addmovement = Vector2( 0, 2 )
+bulletspeed = 1.5
+
+[node name="mirrorblaster17" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 254.199, -3551.74 )
+interval = 0.2
+addmovement = Vector2( 0, 2 )
+bulletspeed = 5.0
 
 [node name="mirrorblaster13" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 360.585, -931.309 )
-rotation = 2.05206
-interval = 0.25
+position = Vector2( 301.458, -3158.71 )
+interval = 0.2
+addmovement = Vector2( 0, 2 )
+bulletspeed = 1.5
+
+[node name="mirrorblaster14" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 309.458, -3449.35 )
+interval = 0.2
+addmovement = Vector2( 0, 2 )
+bulletspeed = 1.5
+
+[node name="mirrorblaster18" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 334.999, -3457.35 )
+interval = 0.2
+addmovement = Vector2( 0, 2 )
+bulletspeed = 1.5
+
+[node name="mirrorblaster15" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 224.083, -3457.35 )
+interval = 0.2
+addmovement = Vector2( 0, 2 )
+bulletspeed = 1.5
+
+[node name="mirrorblaster16" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 185.986, -3451.35 )
+interval = 0.2
+addmovement = Vector2( -40, 2 )
+bulletspeed = 1.5
+
+[node name="mirrorblaster4" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 203.048, -2620.67 )
+interval = 0.2
+addmovement = Vector2( 0, 2 )
+bulletspeed = 1.5
+randmovement = 0.0
+
+[node name="mirrorblaster5" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 342.999, -2612.67 )
+interval = 0.2
+addmovement = Vector2( 0, 2 )
+bulletspeed = 1.5
+randmovement = 0.0
+
+[node name="d3" type="Node2D" parent="Enemies"]
+visible = false
+position = Vector2( 39.9989, -1566.81 )
+
+[node name="mirrorblaster10" parent="Enemies/d3" instance=ExtResource( 2 )]
+position = Vector2( 155.987, -644.785 )
+interval = 1.0
+min_difficulty = 3
+
+[node name="mirrorblaster11" parent="Enemies/d3" instance=ExtResource( 2 )]
+position = Vector2( 200.084, -644.785 )
+interval = 1.0
+min_difficulty = 3
+
+[node name="mirrorblaster12" parent="Enemies/d3" instance=ExtResource( 2 )]
+position = Vector2( 241.851, -644.785 )
+interval = 1.0
+min_difficulty = 3
+
+[node name="mirrorblaster13" parent="Enemies/d3" instance=ExtResource( 2 )]
+position = Vector2( 271.459, -646.045 )
+interval = 1.0
+min_difficulty = 3
+
+[node name="mirrorblaster14" parent="Enemies/d3" instance=ExtResource( 2 )]
+position = Vector2( 305, -652.785 )
+interval = 1.0
+min_difficulty = 3
+
+[node name="mirrorblaster15" parent="Enemies/d3" instance=ExtResource( 2 )]
+position = Vector2( 343.428, -679.243 )
+interval = 1.0
+min_difficulty = 3
+
+[node name="mirrorblaster16" parent="Enemies/d3" instance=ExtResource( 2 )]
+position = Vector2( 120, -732.16 )
+interval = 1.0
+min_difficulty = 3
+
+[node name="mirrorblaster17" parent="Enemies/d3" instance=ExtResource( 2 )]
+position = Vector2( 210.084, -824.134 )
+interval = 1.0
+min_difficulty = 3
+
+[node name="d2plus" type="Node2D" parent="Enemies"]
+visible = false
+position = Vector2( 39.9989, -1566.81 )
+
+[node name="mirrorblaster12" parent="Enemies/d2plus" instance=ExtResource( 2 )]
+position = Vector2( 241.851, -1781.07 )
+interval = 0.5
+addmovement = Vector2( -30, -30 )
+bulletspeed = 0.1
+randmovement = 0.0
+min_difficulty = 2
+max_difficulty = 3
+
+[node name="mirrorblaster13" parent="Enemies/d2plus" instance=ExtResource( 2 )]
+position = Vector2( 261.459, -1781.07 )
+interval = 0.5
+addmovement = Vector2( 30, -30 )
+bulletspeed = 0.1
+randmovement = 0.0
+min_difficulty = 2
+max_difficulty = 3
+
+[node name="mirrorblaster14" parent="Enemies/d2plus" instance=ExtResource( 2 )]
+position = Vector2( 241.851, -1847.81 )
+interval = 0.5
+addmovement = Vector2( -30, -30 )
+bulletspeed = 0.1
+randmovement = 0.0
+min_difficulty = 2
+max_difficulty = 3
+
+[node name="mirrorblaster15" parent="Enemies/d2plus" instance=ExtResource( 2 )]
+position = Vector2( 261.459, -1847.81 )
+interval = 0.5
+addmovement = Vector2( 30, -30 )
+bulletspeed = 0.1
+randmovement = 0.0
+min_difficulty = 2
+max_difficulty = 3
+
+[node name="mirrorblaster16" parent="Enemies/d2plus" instance=ExtResource( 2 )]
+position = Vector2( 241.851, -1902.54 )
+interval = 0.5
+addmovement = Vector2( -30, -30 )
+bulletspeed = 0.1
+randmovement = 0.0
+min_difficulty = 2
+max_difficulty = 3
+
+[node name="mirrorblaster17" parent="Enemies/d2plus" instance=ExtResource( 2 )]
+position = Vector2( 261.459, -1902.54 )
+interval = 0.5
+addmovement = Vector2( 30, -30 )
+bulletspeed = 0.1
+randmovement = 0.0
+min_difficulty = 2
+max_difficulty = 3
+
+[node name="d1" type="Node2D" parent="Enemies"]
+position = Vector2( 39.9989, -1566.81 )
+
+[node name="mirrorblaster10" parent="Enemies/d1" instance=ExtResource( 2 )]
+position = Vector2( 279.459, -1470.15 )
+interval = 0.5
+addmovement = Vector2( -30, 5 )
+bulletspeed = 0.1
+randmovement = 0.0
+min_difficulty = 1
+max_difficulty = 3
+
+[node name="mirrorblaster11" parent="Enemies/d1" instance=ExtResource( 2 )]
+position = Vector2( 202.084, -1478.15 )
+interval = 0.5
+addmovement = Vector2( 30, 5 )
+bulletspeed = 0.1
+randmovement = 0.0
+min_difficulty = 1
+max_difficulty = 3
+
+[node name="destructable" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 90.246, -747.827 )
+max_difficulty = 3
+
+[node name="destructable17" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 202, -1294.43 )
+max_difficulty = 3
+
+[node name="destructable18" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 295, -1621.41 )
+max_difficulty = 3
+
+[node name="destructable19" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 202, -2033.5 )
+max_difficulty = 3
+
+[node name="destructable20" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 307, -2563.15 )
+max_difficulty = 3
+
+[node name="destructable21" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 163.999, -3414.62 )
+max_difficulty = 3
+
+[node name="destructable22" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 205.986, -3404.62 )
+max_difficulty = 3
+
+[node name="destructable23" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 240.083, -3422.62 )
+max_difficulty = 3
+
+[node name="destructable24" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 277.978, -3404.62 )
+max_difficulty = 3
+
+[node name="destructable25" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 311, -3422.62 )
+max_difficulty = 3
+
+[node name="destructable26" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 342.999, -3406.62 )
+max_difficulty = 3
+
+[node name="destructable2" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 119.351, -748.388 )
+max_difficulty = 3
+
+[node name="destructable3" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 149.061, -748.388 )
+max_difficulty = 3
+
+[node name="destructable4" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 224.083, -132.68 )
+max_difficulty = 3
+
+[node name="destructable14" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 347.067, -273.791 )
+max_difficulty = 3
+
+[node name="destructable15" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 147.999, -370.805 )
+max_difficulty = 3
+
+[node name="destructable5" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 181.061, -748.388 )
+max_difficulty = 3
+
+[node name="destructable6" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 214.083, -748.388 )
+max_difficulty = 3
+
+[node name="destructable7" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 244.199, -748.388 )
+max_difficulty = 3
+
+[node name="destructable16" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 275.458, -748.388 )
+max_difficulty = 3
+
+[node name="destructable8" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 305, -748.388 )
+max_difficulty = 3
+
+[node name="destructable9" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 337.067, -748.388 )
+max_difficulty = 3
+
+[node name="destructable10" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 367.939, -748.388 )
+max_difficulty = 3
+
+[node name="destructable11" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 399.513, -746.704 )
+max_difficulty = 3
+
+[node name="destructable12" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 430.765, -748.388 )
+max_difficulty = 3
+
+[node name="destructable13" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 462.127, -746.143 )
+max_difficulty = 3
+
+[node name="Tutorial Elememts" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="Tutorial Elememts"]
+margin_left = 114.449
+margin_top = -41.4883
+margin_right = 363.449
+margin_bottom = -23.4883
+theme = ExtResource( 7 )
+text = "Use arrow keys to move"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="scenechanger" parent="Tutorial Elememts/Label" instance=ExtResource( 13 )]
+position = Vector2( 153.634, -4413.02 )
+
+[node name="Label3" type="Label" parent="Tutorial Elememts"]
+margin_left = 202.0
+margin_top = -2347.0
+margin_right = 363.0
+margin_bottom = -2266.0
+theme = ExtResource( 7 )
+text = "press x 
+to perform 
+special attack
+( -20 graze )"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Tutorial Elememts"]
+margin_left = 135.351
+margin_top = -580.562
+margin_right = 384.351
+margin_bottom = -562.562
+theme = ExtResource( 7 )
+text = "press z to shoot"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="Tutorial Elememts"]
+margin_left = 114.449
+margin_top = -1566.81
+margin_right = 363.449
+margin_bottom = -1548.81
+theme = ExtResource( 7 )
+text = "press shift to focus"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="trollarea" type="KinematicBody2D" parent="Tutorial Elememts"]
+script = ExtResource( 11 )
+
+[node name="trollareaarea" type="Area2D" parent="Tutorial Elememts/trollarea"]
+position = Vector2( 229.048, -964.93 )
+collision_layer = 8192
+collision_mask = 2
+
+[node name="trollsound" type="AudioStreamPlayer" parent="Tutorial Elememts/trollarea/trollareaarea"]
+pause_mode = 2
+stream = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial Elememts/trollarea/trollareaarea"]
+position = Vector2( -53.0491, -25.0811 )
+shape = SubResource( 1 )
+
+[node name="liito2-bullet1" type="Sprite" parent="Tutorial Elememts/trollarea/trollareaarea/CollisionShape2D"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 10 )
+
+[node name="Label3" type="Label" parent="Tutorial Elememts/trollarea"]
+margin_left = 101.195
+margin_top = -1081.39
+margin_right = 541.195
+margin_bottom = -1000.39
+theme = ExtResource( 7 )
+custom_fonts/font = ExtResource( 9 )
+text = "WOAH LOOK 
+AT this sick bean!!
+you should try it 
+         \\/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="area_entered" from="Tutorial Elememts/trollarea/trollareaarea" to="Tutorial Elememts/trollarea" method="_on_trollarea_area_entered"]
+[connection signal="finished" from="Tutorial Elememts/trollarea/trollareaarea/trollsound" to="Tutorial Elememts/trollarea" method="_on_trollsound_finished"]

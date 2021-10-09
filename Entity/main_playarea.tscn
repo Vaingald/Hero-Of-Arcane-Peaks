@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Entity/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/parallax_scroll.gd" type="Script" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Entity/borders.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sprites/UI/liito2-health_bar_strip6.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/UI/liito-difficulties_strip4.png" type="Texture" id=6]
+[ext_resource path="res://UI/editortheme.tres" type="Theme" id=7]
+[ext_resource path="res://UI/menu_pause.tscn" type="PackedScene" id=8]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 5 )
@@ -105,6 +107,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="bulletinfo" type="Label" parent="GameUI/Control"]
+margin_top = 467.044
+margin_right = 108.0
+margin_bottom = 483.044
+theme = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="indi_hp" type="AnimatedSprite" parent="GameUI/Control"]
 position = Vector2( 29.1423, 130.538 )
 frames = SubResource( 7 )
@@ -116,3 +127,7 @@ position = Vector2( 13.3289, 149.761 )
 frames = SubResource( 12 )
 frame = 1
 flip_h = true
+
+[node name="pausemenu" parent="GameUI" instance=ExtResource( 8 )]
+margin_top = -23.725
+margin_bottom = -23.725

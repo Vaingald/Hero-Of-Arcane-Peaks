@@ -3,13 +3,12 @@ class_name Bullet
 
 var velocity = Vector2(0, 0)
 
-func _process(_delta):
-	#position += velocity
-	rotation = velocity.angle() + 90
-	move_and_slide(velocity * 50, Vector2(0, 1))
+#!!!!All enemy bullets are moved in main_gameobject.gd func _process for optimization!
 
 
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()
 
-func _on_Killtimer_timeout():
-	if ($VisibilityNotifier2D.is_on_screen() == false):
-		queue_free()
+
+func _on_VisibilityNotifier2D_viewport_exited(viewport):
+	queue_free()

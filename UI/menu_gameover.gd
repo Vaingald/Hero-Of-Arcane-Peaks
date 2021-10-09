@@ -6,12 +6,10 @@ func _on_Button_pressed():
 	
 	get_tree().change_scene("res://UI/menu_main.tscn")
 
-
-func _on_Button2_pressed():
-	
-	var file = File.new()
-	file.open(gameobject.savefile, File.READ)
-	var content = file.get_as_text()
-	file.close()
-
 	#get_tree().change_scene(gameobject.savefile)
+
+
+func _on_Control_signal_option_selected(index):
+	match index:
+		0: get_tree().change_scene("res://UI/menu_main.tscn")
+		1: get_tree().change_scene("res://UI/menu_main.tscn")

@@ -4,6 +4,8 @@ export(NodePath) var optionvboxpath
 
 export(Array, Array, String) var options = ["New save", "Load save"]
 
+export(int) var defaultindex = 0
+ 
 onready var optionvbox = get_node(optionvboxpath)
 
 onready var optionscene = preload("res://UI/TextOptionSystem/Option.tscn")
@@ -32,7 +34,10 @@ func _ready():
 	
 	add_child(UISound)
 	add_child(arrow)
-	arrow_to_top()
+	
+	arrow.rect_position = optionvbox.rect_position + Vector2(arrow_x_offset, arrow_position_change * defaultindex)
+	selectedoption = defaultindex
+	
 	UISound.stream = load("res://Audio/skr_uiping2.wav")
 	
 	for x in range(options.size()):
@@ -40,7 +45,8 @@ func _ready():
 		var singleoption = optionscene.instance()
 		optionvbox.add_child(singleoption)
 		singleoption.text = str(options[x])
-		
+	
+	
 func get_input():
 	if Input.is_action_just_pressed("ui_down"):
 		selectedoption += 1

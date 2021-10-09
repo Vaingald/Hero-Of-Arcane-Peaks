@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mgc_snd_granny_oivoi4b.mp3-55a87f844fbbf7578f122dae2f9cf764.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/granny/mgc_snd_granny_oivoi4b.mp3"
+dest_files=[ "res://.import/mgc_snd_granny_oivoi4b.mp3-55a87f844fbbf7578f122dae2f9cf764.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

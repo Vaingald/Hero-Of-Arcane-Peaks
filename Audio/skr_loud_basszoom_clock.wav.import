@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/skr_loud_basszoom_clock.wav-b0201128509820b6bcb0710ed43e2262.sample"
+
+[deps]
+
+source_file="res://Audio/skr_loud_basszoom_clock.wav"
+dest_files=[ "res://.import/skr_loud_basszoom_clock.wav-b0201128509820b6bcb0710ed43e2262.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
