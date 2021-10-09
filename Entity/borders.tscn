@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/UI/liito2-border3.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 54.3358, 271.7 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 21.7491, 14.429 )
+
+[node name="Borders" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 225.158, -39.2823 )
+rotation = 1.5708
+
+[node name="liito2-border2" type="Sprite" parent="StaticBody2D"]
+position = Vector2( 39.2824, 225.158 )
+rotation = -1.5708
+z_index = 100
+z_as_relative = false
+texture = ExtResource( 1 )
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 295.425, 185.158 )
+rotation = -1.5708
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 302.217, -213.91 )
+rotation = -1.5708
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 558.515, 32.7917 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 509.321, 135.947 )
+rotation = -0.89269
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 512.438, -161.167 )
+rotation = 0.847858
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 50.507, -162.948 )
+rotation = 2.19773
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 46.9444, 130.158 )
+rotation = 4.16614
+shape = SubResource( 2 )

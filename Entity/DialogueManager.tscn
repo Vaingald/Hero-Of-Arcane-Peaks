@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/seikestheme.tres" type="Theme" id=1]
+[ext_resource path="res://Sprites/HDArtwork/susilanichan.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/UI/wavi_button1.png" type="Texture" id=3]
+
+[node name="Control" type="CanvasLayer"]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_left = 0.00247752
+anchor_right = 0.00247752
+margin_left = 3.81079
+margin_top = 368.0
+margin_right = 474.811
+margin_bottom = 480.0
+texture = ExtResource( 3 )
+region_rect = Rect2( -1.22949, -1.29361, 130.332, 43.101 )
+patch_margin_left = 50
+patch_margin_top = 16
+patch_margin_right = 4
+patch_margin_bottom = 17
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainText" type="RichTextLabel" parent="."]
+margin_left = 21.0
+margin_top = 395.0
+margin_right = 458.0
+margin_bottom = 445.0
+rect_pivot_offset = Vector2( 90.6389, 28.0867 )
+theme = ExtResource( 1 )
+text = "Aaapeli"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainLabel" type="RichTextLabel" parent="."]
+margin_left = 21.0
+margin_top = 378.0
+margin_right = 136.0
+margin_bottom = 395.0
+rect_pivot_offset = Vector2( 90.6389, 28.0867 )
+theme = ExtResource( 1 )
+text = "TEST"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+margin_left = 21.0
+margin_top = 445.0
+margin_right = 136.0
+margin_bottom = 462.0
+rect_pivot_offset = Vector2( 90.6389, 28.0867 )
+theme = ExtResource( 1 )
+text = "> Agree"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+margin_left = 136.0
+margin_top = 445.0
+margin_right = 251.0
+margin_bottom = 472.0
+rect_pivot_offset = Vector2( 90.6389, 28.0867 )
+theme = ExtResource( 1 )
+text = "Don't agree"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="susilanichan" type="Sprite" parent="."]
+position = Vector2( 419.412, 359.081 )
+scale = Vector2( 0.104464, 0.10441 )
+texture = ExtResource( 2 )

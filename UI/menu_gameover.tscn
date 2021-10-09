@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://UI/seikestheme.tres" type="Theme" id=1]
+[ext_resource path="res://Sprites/UI/liito-hervoton-mummo.png" type="Texture" id=2]
+[ext_resource path="res://fonts/editor_dynfont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://UI/menu_gameover.gd" type="Script" id=4]
+[ext_resource path="res://Entity/MusicManager.tscn" type="PackedScene" id=5]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_left = 0.00294952
+anchor_top = -0.000983175
+anchor_right = 0.00294952
+anchor_bottom = -0.000983175
+margin_left = -133.416
+margin_top = -9.93159
+margin_right = 569.584
+margin_bottom = 485.068
+color = Color( 0.109804, 0.101961, 0.12549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="liito_logo_hd" type="Sprite" parent="."]
+position = Vector2( 242.33, 243.511 )
+texture = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="liito_logo_hd"]
+margin_left = -104.407
+margin_top = 89.7145
+margin_right = 121.593
+margin_bottom = 113.715
+theme = ExtResource( 1 )
+text = "Return to menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="liito_logo_hd"]
+margin_left = -123.925
+margin_top = 122.386
+margin_right = 138.075
+margin_bottom = 146.386
+theme = ExtResource( 1 )
+text = "Continue from save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 46.0225
+margin_top = 143.5
+margin_right = 455.022
+margin_bottom = 157.5
+rect_pivot_offset = Vector2( 130.437, 0 )
+custom_fonts/font = ExtResource( 3 )
+text = "\"insanity is doing the same thing over and over again and expecting different results\""
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MusicManager" parent="." instance=ExtResource( 5 )]
+audiopath = "res://Audio/skr_gameover1.wav"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 240, 240 )
+
+[connection signal="pressed" from="liito_logo_hd/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="liito_logo_hd/Button2" to="." method="_on_Button2_pressed"]

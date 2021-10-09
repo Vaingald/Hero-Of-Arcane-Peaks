@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/moonlitclouds.mp3-ab9eae72d522186bad1e2a7c3e7272f1.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/moonlitclouds.mp3"
+dest_files=[ "res://.import/moonlitclouds.mp3-ab9eae72d522186bad1e2a7c3e7272f1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

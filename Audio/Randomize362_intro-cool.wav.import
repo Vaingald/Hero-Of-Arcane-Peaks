@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Randomize362_intro-cool.wav-8ad31e52f89afe1745843818d29b5e40.sample"
+
+[deps]
+
+source_file="res://Audio/Randomize362_intro-cool.wav"
+dest_files=[ "res://.import/Randomize362_intro-cool.wav-8ad31e52f89afe1745843818d29b5e40.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

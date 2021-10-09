@@ -1,0 +1,118 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Entity/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/parallax_scroll.gd" type="Script" id=2]
+[ext_resource path="res://UI/seikestheme.tres" type="Theme" id=3]
+[ext_resource path="res://Entity/borders.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sprites/UI/liito2-health_bar_strip6.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/UI/liito-difficulties_strip4.png" type="Texture" id=6]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 48, 8 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 5 )
+region = Rect2( 48, 0, 48, 8 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 5 )
+region = Rect2( 96, 0, 48, 8 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 5 )
+region = Rect2( 144, 0, 48, 8 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 5 )
+region = Rect2( 192, 0, 48, 8 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 5 )
+region = Rect2( 240, 0, 48, 8 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 6 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 6 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 6 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Playarea" type="Camera2D"]
+offset = Vector2( 240, 240 )
+current = true
+script = ExtResource( 2 )
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 240, 288.06 )
+
+[node name="Borders" parent="." instance=ExtResource( 4 )]
+
+[node name="GameUI" type="Node2D" parent="."]
+position = Vector2( 0, 12.8553 )
+z_index = 300
+
+[node name="Control" type="Control" parent="GameUI"]
+margin_top = -12.8553
+margin_right = 40.0
+margin_bottom = 27.1447
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="savefileinfo" type="Label" parent="GameUI/Control"]
+margin_top = 2.47268
+margin_right = 108.0
+margin_bottom = 18.4727
+theme = ExtResource( 3 )
+text = "no save file (ERROR CODE: ID 10T)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="grazeinfo" type="Label" parent="GameUI/Control"]
+margin_top = 62.8584
+margin_right = 108.0
+margin_bottom = 78.8584
+theme = ExtResource( 3 )
+text = "Graze:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="indi_hp" type="AnimatedSprite" parent="GameUI/Control"]
+position = Vector2( 29.1423, 130.538 )
+frames = SubResource( 7 )
+frame = 5
+flip_h = true
+
+[node name="indi_difficulty" type="AnimatedSprite" parent="GameUI/Control"]
+position = Vector2( 13.3289, 149.761 )
+frames = SubResource( 12 )
+frame = 1
+flip_h = true

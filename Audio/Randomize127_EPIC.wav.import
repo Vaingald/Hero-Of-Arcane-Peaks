@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Randomize127_EPIC.wav-043402e2ac0a27cf5ab1b61abd49d8ce.sample"
+
+[deps]
+
+source_file="res://Audio/Randomize127_EPIC.wav"
+dest_files=[ "res://.import/Randomize127_EPIC.wav-043402e2ac0a27cf5ab1b61abd49d8ce.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

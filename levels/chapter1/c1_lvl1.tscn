@@ -1,0 +1,227 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Entity/MusicManager.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Entity/Enemies/chapter1/mirrorblaster.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/BG/layer2grayt.png" type="Texture" id=3]
+[ext_resource path="res://Entity/main_playarea.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Audio/Music/ost_sunrays.wav" type="AudioStream" id=6]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 244.199, 288.06 )
+stream = ExtResource( 6 )
+volume_db = -80.0
+autoplay = true
+
+[node name="MusicManager" parent="." instance=ExtResource( 1 )]
+audiopath = "res://Audio/Music/mirrored.mp3"
+
+[node name="Playarea" parent="." instance=ExtResource( 4 )]
+
+[node name="Node2D" type="Node2D" parent="Playarea"]
+position = Vector2( 24.1329, -16.6966 )
+z_index = -150
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Playarea/Node2D"]
+follow_viewport_enable = true
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Playarea/Node2D/ParallaxBackground"]
+z_index = -200
+motion_scale = Vector2( 0, 0 )
+
+[node name="ColorRect" type="ColorRect" parent="Playarea/Node2D/ParallaxBackground/ParallaxLayer2"]
+margin_left = -12961.7
+margin_top = -12960.0
+margin_right = 12958.3
+margin_bottom = 17760.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Playarea/Node2D/ParallaxBackground"]
+motion_scale = Vector2( 0.25, 1 )
+motion_mirroring = Vector2( 480, 270 )
+
+[node name="Sprite" type="Sprite" parent="Playarea/Node2D/ParallaxBackground/ParallaxLayer"]
+modulate = Color( 0.270588, 0.643137, 0.592157, 0.0705882 )
+position = Vector2( -643.942, -31774.4 )
+z_index = -100
+texture = ExtResource( 3 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 8, 0, 960, 32600 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Playarea/Node2D/ParallaxBackground"]
+position = Vector2( -0.000137329, 0 )
+motion_scale = Vector2( 1, 0.11 )
+motion_mirroring = Vector2( 480, 270 )
+
+[node name="Sprite" type="Sprite" parent="Playarea/Node2D/ParallaxBackground/ParallaxLayer3"]
+modulate = Color( 0.219608, 0.282353, 0.396078, 0.0431373 )
+position = Vector2( 0, -31824.8 )
+z_index = -100
+texture = ExtResource( 3 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 8, 0, 960, 32600 )
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="mirrorblaster" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 108, -1874.51 )
+interval = 0.05
+addmovement = Vector2( 20, -20 )
+bulletspeed = 0.1
+
+[node name="mirrorblaster6" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 116, -2342.9 )
+addmovement = Vector2( 50, 0 )
+
+[node name="mirrorblaster7" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 100, -2419.82 )
+addmovement = Vector2( 50, 0 )
+
+[node name="mirrorblaster8" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 106, -2492.18 )
+addmovement = Vector2( 50, 0 )
+
+[node name="mirrorblaster9" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 378.618, -2846.53 )
+addmovement = Vector2( -50, 0 )
+
+[node name="mirrorblaster10" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 378.618, -2921.45 )
+addmovement = Vector2( -50, 0 )
+
+[node name="mirrorblaster11" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 378.618, -2993.81 )
+addmovement = Vector2( -50, 0 )
+
+[node name="mirrorblaster12" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 244.199, -3672.67 )
+interval = 0.02
+addmovement = Vector2( 0, 20 )
+bulletspeed = 0.3
+
+[node name="mirrorblaster14" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 92, -3862.23 )
+interval = 0.5
+addmovement = Vector2( 0, 20 )
+bulletspeed = 2.0
+
+[node name="mirrorblaster15" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 126, -3862.23 )
+interval = 0.5
+addmovement = Vector2( 0, 20 )
+bulletspeed = 2.0
+
+[node name="mirrorblaster16" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 154.294, -3862.23 )
+interval = 0.5
+addmovement = Vector2( 0, 20 )
+bulletspeed = 2.0
+
+[node name="mirrorblaster17" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 198.857, -3862.23 )
+interval = 0.5
+addmovement = Vector2( 0, 20 )
+bulletspeed = 2.0
+
+[node name="mirrorblaster18" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 240.938, -3862.23 )
+interval = 0.5
+addmovement = Vector2( 0, 20 )
+bulletspeed = 2.0
+
+[node name="mirrorblaster19" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 280.55, -3862.23 )
+interval = 0.5
+addmovement = Vector2( 0, 20 )
+bulletspeed = 2.0
+
+[node name="mirrorblaster20" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 316.058, -3862.23 )
+interval = 0.5
+addmovement = Vector2( 0, 20 )
+bulletspeed = 2.0
+
+[node name="mirrorblaster22" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 350.543, -3862.23 )
+interval = 0.5
+addmovement = Vector2( 0, 20 )
+bulletspeed = 2.0
+
+[node name="mirrorblaster21" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 53.285, -4484.53 )
+interval = 0.5
+addmovement = Vector2( 0, -10 )
+bulletspeed = 2.0
+
+[node name="mirrorblaster23" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 87.285, -4484.53 )
+interval = 0.5
+addmovement = Vector2( 0, -10 )
+bulletspeed = 2.0
+
+[node name="mirrorblaster24" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 115.579, -4484.53 )
+interval = 0.5
+addmovement = Vector2( 0, -10 )
+bulletspeed = 2.0
+
+[node name="mirrorblaster25" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 160.142, -4484.53 )
+interval = 0.5
+addmovement = Vector2( 0, -10 )
+bulletspeed = 2.0
+
+[node name="mirrorblaster26" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 202.223, -4484.53 )
+interval = 0.5
+addmovement = Vector2( 0, -10 )
+bulletspeed = 2.0
+
+[node name="mirrorblaster27" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 241.835, -4484.53 )
+interval = 0.5
+addmovement = Vector2( 0, -10 )
+bulletspeed = 2.0
+
+[node name="mirrorblaster28" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 277.343, -4484.53 )
+interval = 0.5
+addmovement = Vector2( 0, -10 )
+bulletspeed = 2.0
+
+[node name="mirrorblaster29" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 311.828, -4484.53 )
+interval = 0.5
+addmovement = Vector2( 0, -10 )
+bulletspeed = 2.0
+
+[node name="mirrorblaster3" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 248.938, -219.09 )
+interval = 0.5
+
+[node name="mirrorblaster2" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 316.058, -1907.28 )
+rotation = 2.05206
+interval = 0.05
+addmovement = Vector2( -20, -20 )
+bulletspeed = 0.1
+
+[node name="mirrorblaster4" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 108, -735.973 )
+rotation = 2.05206
+interval = 0.25
+
+[node name="mirrorblaster5" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 360.585, -931.309 )
+rotation = 2.05206
+interval = 0.25
+
+[node name="mirrorblaster13" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 360.585, -931.309 )
+rotation = 2.05206
+interval = 0.25

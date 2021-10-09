@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/skr_gameover1.wav-734f0e2cebbb1bbfaa6d164a7edfd9b4.sample"
+
+[deps]
+
+source_file="res://Audio/skr_gameover1.wav"
+dest_files=[ "res://.import/skr_gameover1.wav-734f0e2cebbb1bbfaa6d164a7edfd9b4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,78 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/seikestheme.tres" type="Theme" id=1]
+[ext_resource path="res://Sprites/skr_symmetrypattern1.png" type="Texture" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+margin_left = 163.0
+margin_top = 31.0
+margin_right = 334.0
+margin_bottom = 469.0
+color = Color( 0.141176, 0.196078, 0.294118, 0.254902 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ColorRect"]
+modulate = Color( 0.54902, 0.54902, 0.54902, 0.368627 )
+margin_left = -13.0
+margin_right = 182.0
+margin_bottom = 438.0
+texture = ExtResource( 2 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+margin_left = 163.0
+margin_top = 200.0
+margin_right = 334.0
+margin_bottom = 182.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="Panel/VBoxContainer"]
+margin_right = 171.0
+margin_bottom = 24.0
+theme = ExtResource( 1 )
+text = "Resume"
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 28.0
+margin_right = 171.0
+margin_bottom = 52.0
+theme = ExtResource( 1 )
+text = "Options"
+
+[node name="Button2" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 56.0
+margin_right = 171.0
+margin_bottom = 80.0
+theme = ExtResource( 1 )
+text = "Quit"
+
+[node name="Label" type="Label" parent="Panel"]
+margin_top = 31.0
+margin_right = 126.0
+margin_bottom = 47.0
+theme = ExtResource( 1 )
+text = "II      Paused"
+__meta__ = {
+"_edit_use_anchors_": false
+}

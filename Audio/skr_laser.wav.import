@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/skr_laser.wav-0298aca91638bfcb3b1b2ec5ddb34342.sample"
+
+[deps]
+
+source_file="res://Audio/skr_laser.wav"
+dest_files=[ "res://.import/skr_laser.wav-0298aca91638bfcb3b1b2ec5ddb34342.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

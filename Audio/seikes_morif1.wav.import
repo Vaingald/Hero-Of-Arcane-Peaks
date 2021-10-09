@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/seikes_morif1.wav-c9852384ce7c57b3e9e7e6d3e98759a0.sample"
+
+[deps]
+
+source_file="res://Audio/seikes_morif1.wav"
+dest_files=[ "res://.import/seikes_morif1.wav-c9852384ce7c57b3e9e7e6d3e98759a0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

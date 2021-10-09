@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mirrored.mp3-76f415e1a0e4b2e543e679313ad6f866.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/mirrored.mp3"
+dest_files=[ "res://.import/mirrored.mp3-76f415e1a0e4b2e543e679313ad6f866.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

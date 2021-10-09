@@ -1,0 +1,119 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scripts/main_gameobject.gd" type="Script" id=1]
+[ext_resource path="res://3d/Materials/scrolling_water.tres" type="Material" id=2]
+[ext_resource path="res://3d/Textures/cloud2.png" type="Texture" id=3]
+[ext_resource path="res://Entity/player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Entity/bullet1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Audio/hidden/spong_bob_but_its_liito-orava2.wav" type="AudioStream" id=6]
+[ext_resource path="res://Entity/borders.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Entity/Enemies/enemy1.tscn" type="PackedScene" id=8]
+
+[sub_resource type="ProceduralSky" id=1]
+radiance_size = 3
+sky_top_color = Color( 0.537255, 0.654902, 0.741176, 1 )
+sky_horizon_color = Color( 0.262745, 0.556863, 0.870588, 1 )
+ground_bottom_color = Color( 0.164706, 0.631373, 0.886275, 1 )
+ground_horizon_color = Color( 0.188235, 0.482353, 0.698039, 1 )
+sun_latitude = 55.19
+
+[sub_resource type="Environment" id=2]
+background_mode = 2
+background_sky = SubResource( 1 )
+background_color = Color( 0.164706, 0.631373, 0.886275, 1 )
+ambient_light_energy = 1.2
+fog_color = Color( 0.466667, 0.705882, 0.843137, 1 )
+fog_sun_color = Color( 0, 0, 0, 1 )
+fog_depth_begin = 0.0
+fog_depth_end = 34.3
+glow_enabled = true
+
+[sub_resource type="Animation" id=3]
+resource_name = "camera"
+step = 0.127
+tracks/0/type = "transform"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 15.0325, 4.37925, 6.88768, -0.364051, 0.200484, 0.0805617, 0.905971, 1, 1, 1, 1.016, 1, 15.032, 95.295, 6.888, -0.364051, 0.200484, 0.0805617, 0.905971, 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_transparent = true
+flags_unshaded = true
+albedo_texture = ExtResource( 3 )
+uv1_scale = Vector3( 0.05, 0.05, 0.05 )
+uv1_offset = Vector3( 0.456, 0.158, 0.538 )
+uv1_triplanar = true
+
+[node name="Node" type="Node"]
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="player" parent="Node2D" instance=ExtResource( 4 )]
+position = Vector2( 244.199, 288.06 )
+
+[node name="Node2D" parent="Node2D/player" instance=ExtResource( 8 )]
+position = Vector2( -4.19901, -171.06 )
+
+[node name="bullet1" parent="Node2D" instance=ExtResource( 5 )]
+rotation = -0.00697277
+
+[node name="bullet2" parent="Node2D" instance=ExtResource( 5 )]
+position = Vector2( 0, -0.594604 )
+rotation = -0.00697277
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Node2D"]
+position = Vector2( 244.199, 288.06 )
+stream = ExtResource( 6 )
+autoplay = true
+
+[node name="Borders" parent="Node2D" instance=ExtResource( 7 )]
+
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0325, 4.37925, 6.88768 )
+
+[node name="Camera" type="Camera" parent="Spatial"]
+transform = Transform( 0.707107, -0.489277, 0.510498, 0, 0.721954, 0.691942, -0.707107, -0.489277, 0.510498, 15.0325, 4.37925, 6.88768 )
+environment = SubResource( 2 )
+fov = 61.5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Spatial/Camera"]
+anims/camera = SubResource( 3 )
+
+[node name="CSGBox" type="CSGBox" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.129434, -1.84708, 0.00253105 )
+width = 20.0
+height = 1.0
+depth = 20.0
+material = ExtResource( 2 )
+
+[node name="CSGBox3" type="CSGBox" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, -2.98023e-08, 2.98023e-08, 2.98023e-08, 1, -0.129435, -1.84708, -19.8423 )
+width = 20.0
+height = 1.0
+depth = 20.0
+material = ExtResource( 2 )
+
+[node name="CSGBox4" type="CSGBox" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8873, -1.84708, -19.8423 )
+width = 20.0
+height = 1.0
+depth = 20.0
+material = ExtResource( 2 )
+
+[node name="CSGBox5" type="CSGBox" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8667, -1.84708, 0.328851 )
+width = 20.0
+height = 1.0
+depth = 20.0
+material = ExtResource( 2 )
+
+[node name="CSGBox2" type="CSGBox" parent="Spatial"]
+transform = Transform( -0.968552, -0.0333278, -0.246568, -0.239369, 0.39522, 0.886851, 0.0678921, 0.917982, -0.390769, 2.99138, 14.3891, -4.34197 )
+width = 20.0
+height = 0.342
+depth = 20.0
+material = SubResource( 4 )

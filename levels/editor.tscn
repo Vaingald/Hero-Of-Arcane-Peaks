@@ -1,0 +1,285 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Entity/MusicManager.tscn" type="PackedScene" id=1]
+[ext_resource path="res://3d/Materials/scrolling_water.tres" type="Material" id=2]
+[ext_resource path="res://fonts/editor_dynfont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Entity/player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/musicmanager.gd" type="Script" id=5]
+[ext_resource path="res://Audio/Music/ost_sunrays.wav" type="AudioStream" id=6]
+[ext_resource path="res://Entity/borders.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Entity/patternbuilder_enemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://UI/editortheme.tres" type="Theme" id=9]
+[ext_resource path="res://Sprites/UI/skr_editorbutton.png" type="Texture" id=10]
+
+[sub_resource type="ProceduralSky" id=1]
+radiance_size = 3
+sky_top_color = Color( 0.262745, 0.560784, 0.776471, 1 )
+sky_horizon_color = Color( 0.262745, 0.556863, 0.870588, 1 )
+ground_bottom_color = Color( 0.164706, 0.631373, 0.886275, 1 )
+ground_horizon_color = Color( 0.188235, 0.482353, 0.698039, 1 )
+sun_latitude = 55.19
+
+[sub_resource type="Environment" id=2]
+background_mode = 2
+background_sky = SubResource( 1 )
+ambient_light_energy = 1.2
+fog_color = Color( 0.466667, 0.705882, 0.843137, 1 )
+fog_sun_color = Color( 0, 0, 0, 1 )
+fog_depth_begin = 0.0
+fog_depth_end = 34.3
+glow_enabled = true
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 8, 8 )
+margin_left = 1.0
+margin_right = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 8, 8 )
+margin_left = 1.0
+margin_right = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 8, 8 )
+margin_left = 1.0
+margin_right = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Spatial" type="Spatial" parent="."]
+
+[node name="Camera" type="Camera" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.935, 0 )
+environment = SubResource( 2 )
+fov = 61.5
+
+[node name="CSGBox" type="CSGBox" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.129434, -1.84708, 0.00253105 )
+width = 20.0
+height = 1.0
+depth = 20.0
+material = ExtResource( 2 )
+
+[node name="CSGBox3" type="CSGBox" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.129434, -1.84708, -19.8423 )
+width = 20.0
+height = 1.0
+depth = 20.0
+material = ExtResource( 2 )
+
+[node name="CSGBox4" type="CSGBox" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8873, -1.84708, -19.8423 )
+width = 20.0
+height = 1.0
+depth = 20.0
+material = ExtResource( 2 )
+
+[node name="CSGBox5" type="CSGBox" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8667, -1.84708, 0.328851 )
+width = 20.0
+height = 1.0
+depth = 20.0
+material = ExtResource( 2 )
+
+[node name="player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 240, 288.06 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 244.199, 288.06 )
+stream = ExtResource( 6 )
+volume_db = -80.0
+autoplay = true
+
+[node name="Control" type="Control" parent="."]
+margin_left = 100.487
+margin_top = 19.3406
+margin_right = 140.487
+margin_bottom = 59.3406
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+margin_left = -98.0
+margin_top = 2.0
+margin_right = -7.0
+margin_bottom = 461.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/VBoxContainer"]
+margin_right = 91.0
+margin_bottom = 11.0
+theme = ExtResource( 9 )
+custom_fonts/font = ExtResource( 3 )
+text = "Modulus:"
+
+[node name="LineEdit" type="LineEdit" parent="Control/VBoxContainer"]
+margin_top = 15.0
+margin_right = 91.0
+margin_bottom = 28.0
+theme = ExtResource( 9 )
+custom_styles/read_only = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = ExtResource( 3 )
+text = "5"
+
+[node name="Label2" type="Label" parent="Control/VBoxContainer"]
+margin_top = 32.0
+margin_right = 91.0
+margin_bottom = 43.0
+theme = ExtResource( 9 )
+custom_fonts/font = ExtResource( 3 )
+text = "Interval"
+
+[node name="LineEdit2" type="LineEdit" parent="Control/VBoxContainer"]
+margin_top = 47.0
+margin_right = 91.0
+margin_bottom = 60.0
+theme = ExtResource( 9 )
+custom_styles/read_only = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "0.1"
+
+[node name="Label3" type="Label" parent="Control/VBoxContainer"]
+margin_top = 64.0
+margin_right = 91.0
+margin_bottom = 75.0
+theme = ExtResource( 9 )
+custom_fonts/font = ExtResource( 3 )
+text = "Bullets per shot"
+
+[node name="LineEdit3" type="LineEdit" parent="Control/VBoxContainer"]
+margin_top = 79.0
+margin_right = 91.0
+margin_bottom = 92.0
+theme = ExtResource( 9 )
+custom_styles/read_only = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "1"
+
+[node name="Button" type="Button" parent="Control/VBoxContainer"]
+margin_top = 96.0
+margin_right = 91.0
+margin_bottom = 109.0
+hint_tooltip = "does not support animation!"
+theme = ExtResource( 9 )
+custom_fonts/font = ExtResource( 3 )
+text = "Select sprite"
+
+[node name="Label4" type="Label" parent="Control/VBoxContainer"]
+margin_top = 113.0
+margin_right = 91.0
+margin_bottom = 124.0
+theme = ExtResource( 9 )
+custom_fonts/font = ExtResource( 3 )
+text = "Reset bullet"
+
+[node name="Label5" type="Label" parent="Control/VBoxContainer"]
+margin_top = 128.0
+margin_right = 91.0
+margin_bottom = 139.0
+theme = ExtResource( 9 )
+custom_fonts/font = ExtResource( 3 )
+text = "counter after"
+
+[node name="LineEdit4" type="LineEdit" parent="Control/VBoxContainer"]
+margin_top = 143.0
+margin_right = 91.0
+margin_bottom = 156.0
+theme = ExtResource( 9 )
+custom_styles/read_only = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "500"
+
+[node name="Label6" type="Label" parent="Control"]
+margin_left = 286.506
+margin_top = 6.36182
+margin_right = 377.506
+margin_bottom = 17.3618
+theme = ExtResource( 9 )
+custom_fonts/font = ExtResource( 3 )
+text = "Bullet velocity"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label7" type="Label" parent="Control"]
+margin_left = 286.506
+margin_top = 21.3618
+margin_right = 377.506
+margin_bottom = 32.3618
+theme = ExtResource( 9 )
+custom_fonts/font = ExtResource( 3 )
+text = "expression"
+
+[node name="FileDialog" type="FileDialog" parent="Control"]
+visible = true
+margin_top = 40.7236
+margin_right = 315.0
+margin_bottom = 170.724
+theme = ExtResource( 9 )
+window_title = "Open a File"
+mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="Control"]
+margin_left = 289.0
+margin_top = 37.3618
+margin_right = 380.0
+margin_bottom = 195.362
+theme = ExtResource( 9 )
+text = "Vector2(sin(bulletcount) * 2, cos(bulletcount) * 2)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Control"]
+margin_left = 289.0
+margin_top = 199.724
+margin_right = 380.0
+margin_bottom = 212.724
+hint_tooltip = "does not support animation!"
+theme = ExtResource( 9 )
+custom_fonts/font = ExtResource( 3 )
+text = "Apply"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Borders" parent="." instance=ExtResource( 7 )]
+z_index = -11
+
+[node name="MusicManager" parent="." instance=ExtResource( 1 )]
+
+[node name="musicmanager" type="Node" parent="."]
+script = ExtResource( 5 )
+audiopath = "Randomize127_EPIC"
+
+[node name="Node2D" parent="." instance=ExtResource( 8 )]
+position = Vector2( 246.38, 113.93 )
+
+[connection signal="text_entered" from="Control/VBoxContainer/LineEdit" to="Node2D" method="_on_LineEdit_text_entered"]
+[connection signal="text_entered" from="Control/VBoxContainer/LineEdit2" to="Node2D" method="_on_LineEdit2_text_entered"]
+[connection signal="text_entered" from="Control/VBoxContainer/LineEdit3" to="Node2D" method="_on_LineEdit3_text_entered"]
+[connection signal="pressed" from="Control/VBoxContainer/Button" to="Node2D" method="_on_Button_pressed"]
+[connection signal="text_entered" from="Control/VBoxContainer/LineEdit4" to="Node2D" method="_on_LineEdit4_text_entered"]
+[connection signal="file_selected" from="Control/FileDialog" to="Node2D" method="_on_FileDialog_file_selected"]
+[connection signal="text_changed" from="Control/TextEdit" to="Node2D" method="_on_TextEdit_text_changed"]
+[connection signal="pressed" from="Control/Button2" to="Node2D" method="_on_Button2_pressed"]

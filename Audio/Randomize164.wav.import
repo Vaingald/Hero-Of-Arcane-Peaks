@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Randomize164.wav-bb4a7af0eb5eb29ca2cd85da285c0cb5.sample"
+
+[deps]
+
+source_file="res://Audio/Randomize164.wav"
+dest_files=[ "res://.import/Randomize164.wav-bb4a7af0eb5eb29ca2cd85da285c0cb5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
