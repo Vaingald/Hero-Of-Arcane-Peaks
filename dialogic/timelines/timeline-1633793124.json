@@ -1,0 +1,176 @@
+{
+	"events": [
+		{
+			"action": "join",
+			"character": "character-1633794214.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"action": "join",
+			"character": "character-1633793597.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"background": "res://Sprites/BG/badforest-export3.png",
+			"event_id": "dialogic_021",
+			"fade_duration": 0
+		},
+		{
+			"background": "res://Sprites/HDArtwork/story/skr_story1fix.png",
+			"event_id": "dialogic_021"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "Wing",
+			"text": "Seike spies on Wayneth throught an orb"
+		},
+		{
+			"character": "character-1633794476.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "So, he did it? He killed my twin sister Cikeyki? shes speaking to her servants"
+		},
+		{
+			"character": "character-1633794476.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Then I must have my revenge. I must make him suffer. And after he is gone, I will take over the the whole world! Servants! Bring me the scroll!\nServants bring her an ancient scroll"
+		},
+		{
+			"background": "res://Sprites/HDArtwork/story/skr_storyf3_nontransparent.png",
+			"event_id": "dialogic_021"
+		},
+		{
+			"character": "character-1633794476.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You will feel the pain of the curse I am about to give you with this scroll Wayneth!"
+		},
+		{
+			"background": "res://Sprites/HDArtwork/story/skr_story4_nontransparent.png",
+			"event_id": "dialogic_021"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "She opens the scroll that contains strange symbols and a weird pentagram in the middle and begin the ritual with the symbols, pentagram, her hand, and her eyes to glow with color magenta"
+		},
+		{
+			"action": "join",
+			"character": "character-1633794601.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1633794601.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "The world is returning back to normal after Cikeyki's attempt to take over the world."
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "As ciyuna finishes her sentence and turns away from Wayneth, he pulls out a mirror and dissapears in thin air"
+		},
+		{
+			"character": "character-1633793597.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": " Wayneth? Wayneth where did you go? Wayneth! I'm not in the mood for hide and seek!"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Wayneth wakes up in the same place he was but just reflected"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "He looks around and sees another self, that does everything he does but just reflected."
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Wayneth waves to him and his reflection waves back"
+		},
+		{
+			"character": "character-1633793597.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Acts like a reflection but not in a mirror? Thats weird."
+		},
+		{
+			"character": "character-1633794214.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Wayneth walks up to the mirror twin while the mirror twin does the same"
+		},
+		{
+			"character": "character-1633793597.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "What happens if I'll have a physical contact with you?"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Wayneth has physical contact with Wayneth and they both get pulled into each other fusing into one"
+		},
+		{
+			"audio": "play",
+			"audio_bus": "Master",
+			"event_id": "dialogic_030",
+			"event_name": "AudioEvent",
+			"file": "res://Audio/dramatic dropper riser.wav",
+			"volume": -3
+		},
+		{
+			"character": "character-1633793597.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Well this is interesting. I guess I can split into myself and a reflection and fuse back when I'd like to. Hm? What is that? Looks like a portal over there."
+		},
+		{
+			"change_scene": "res://levels/chapter1/c1_lvl1.tscn",
+			"event_id": "dialogic_041"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2.5",
+		"file": "timeline-1633793124.json",
+		"name": "story1"
+	}
+}

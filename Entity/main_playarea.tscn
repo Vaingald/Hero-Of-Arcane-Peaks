@@ -129,5 +129,6 @@ frame = 1
 flip_h = true
 
 [node name="pausemenu" parent="GameUI" instance=ExtResource( 8 )]
+visible = false
 margin_top = -23.725
 margin_bottom = -23.725

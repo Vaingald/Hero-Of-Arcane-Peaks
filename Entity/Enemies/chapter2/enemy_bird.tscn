@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Entity/Enemies/enemy_base.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/sf_kaspor_bird.tres" type="SpriteFrames" id=2]
+
+[node name="enemy_bird" instance=ExtResource( 1 )]
+bulletpattern_name = "bird1"
+
+[node name="sprite" parent="." index="1"]
+texture = null
+
+[node name="AnimatedSprite" parent="." index="6"]
+frames = ExtResource( 2 )
+frame = 1

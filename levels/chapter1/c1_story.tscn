@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sprites/HDArtwork/story/sf_story1.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://levels/chapter1/c1_story.gd" type="Script" id=2]
+[ext_resource path="res://addons/dialogic/Dialog.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/musicmanager.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/BG/badforest-export3.png" type="Texture" id=5]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 240, 240 )
+scale = Vector2( 0.409556, 0.410959 )
+frames = ExtResource( 1 )
+frame = 2
+
+[node name="DialogNode" parent="." instance=ExtResource( 3 )]
+margin_top = 1.52588e-05
+timeline = "timeline-1633793124.json"
+
+[node name="musicmanager" type="Node" parent="."]
+script = ExtResource( 4 )
+audiopath = "res://Audio/Music/hero_of_the_arcane_peaks_seikes_revenge_theme.mp3"
+
+[node name="badforest-export2" type="Sprite" parent="."]
+visible = false
+position = Vector2( 240, 240 )
+z_index = -44
+texture = ExtResource( 5 )

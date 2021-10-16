@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Entity/player_controller.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/WingFocused.png" type="Texture" id=2]
@@ -29,6 +29,9 @@ extents = Vector2( 1, 1 )
 
 [sub_resource type="CircleShape2D" id=4]
 radius = 14.8477
+
+[sub_resource type="Gradient" id=5]
+colors = PoolColorArray( 1, 1, 1, 0.376471, 1, 1, 1, 0 )
 
 [node name="player" type="Node2D"]
 pause_mode = 2
@@ -66,6 +69,15 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cLeft/lGrazeArea"]
 shape = SubResource( 4 )
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="cLeft"]
+z_index = -55
+texture = ExtResource( 2 )
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+color_ramp = SubResource( 5 )
+
 [node name="sfx" type="Node2D" parent="."]
 
 [node name="sfxDamage" type="AudioStreamPlayer" parent="sfx"]
@@ -83,6 +95,7 @@ stream = ExtResource( 8 )
 
 [node name="AfterdamageTimer" type="Timer" parent="."]
 wait_time = 0.35
+one_shot = true
 
 [node name="PregameoverTimer" type="Timer" parent="."]
 wait_time = 0.5

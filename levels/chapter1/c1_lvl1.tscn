@@ -1,7 +1,7 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Entity/MusicManager.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Entity/Enemies/chapter1/mirrorblaster.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Entity/Enemies/enemy_base.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/BG/layer2grayt.png" type="Texture" id=3]
 [ext_resource path="res://Entity/main_playarea.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Entity/Enemies/chapter1/destructable.tscn" type="PackedScene" id=5]
@@ -11,7 +11,9 @@
 [ext_resource path="res://fonts/biglabel.tres" type="DynamicFont" id=9]
 [ext_resource path="res://Sprites/liito2-bullet1.png" type="Texture" id=10]
 [ext_resource path="res://Entity/trollarea.gd" type="Script" id=11]
+[ext_resource path="res://Sprites/skr_timecrack.png" type="Texture" id=12]
 [ext_resource path="res://Entity/scenechanger_area.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Sprites/skr_grazearea_tutorial.png" type="Texture" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 22.2395, 26.3697 )
@@ -91,7 +93,7 @@ addmovement = Vector2( 0, 2 )
 bulletspeed = 1.5
 
 [node name="mirrorblaster8" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 260.083, -1455.06 )
+position = Vector2( 244.199, -1480.03 )
 interval = 0.2
 addmovement = Vector2( 0, 2 )
 bulletspeed = 1.5
@@ -99,7 +101,6 @@ randmovement = 0.0
 
 [node name="mirrorblaster19" parent="Enemies" instance=ExtResource( 2 )]
 position = Vector2( 267.978, -3941.88 )
-interval = 0.02
 addmovement = Vector2( 0, 2 )
 bulletspeed = 2.0
 randmovement = 0.0
@@ -127,32 +128,8 @@ interval = 0.2
 addmovement = Vector2( 0, 2 )
 bulletspeed = 1.5
 
-[node name="mirrorblaster3" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 167.999, -2466.68 )
-interval = 0.2
-addmovement = Vector2( 0, 2 )
-bulletspeed = 1.5
-
-[node name="mirrorblaster6" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 260.083, -2620.67 )
-interval = 0.2
-addmovement = Vector2( 0, 2 )
-bulletspeed = 1.5
-
 [node name="mirrorblaster7" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 240, -2905.08 )
-interval = 0.2
-addmovement = Vector2( 0, 2 )
-bulletspeed = 1.5
-
-[node name="mirrorblaster10" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 285.458, -2787.92 )
-interval = 0.2
-addmovement = Vector2( 0, 2 )
-bulletspeed = 1.5
-
-[node name="mirrorblaster11" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 176, -3158.71 )
+position = Vector2( 224.083, -2883.65 )
 interval = 0.2
 addmovement = Vector2( 0, 2 )
 bulletspeed = 1.5
@@ -164,16 +141,10 @@ addmovement = Vector2( 0, 2 )
 bulletspeed = 1.5
 
 [node name="mirrorblaster17" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 254.199, -3551.74 )
+position = Vector2( 248.083, -3655.7 )
 interval = 0.2
 addmovement = Vector2( 0, 2 )
 bulletspeed = 5.0
-
-[node name="mirrorblaster13" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 301.458, -3158.71 )
-interval = 0.2
-addmovement = Vector2( 0, 2 )
-bulletspeed = 1.5
 
 [node name="mirrorblaster14" parent="Enemies" instance=ExtResource( 2 )]
 position = Vector2( 309.458, -3449.35 )
@@ -181,33 +152,8 @@ interval = 0.2
 addmovement = Vector2( 0, 2 )
 bulletspeed = 1.5
 
-[node name="mirrorblaster18" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 334.999, -3457.35 )
-interval = 0.2
-addmovement = Vector2( 0, 2 )
-bulletspeed = 1.5
-
-[node name="mirrorblaster15" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 224.083, -3457.35 )
-interval = 0.2
-addmovement = Vector2( 0, 2 )
-bulletspeed = 1.5
-
-[node name="mirrorblaster16" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 185.986, -3451.35 )
-interval = 0.2
-addmovement = Vector2( -40, 2 )
-bulletspeed = 1.5
-
-[node name="mirrorblaster4" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 203.048, -2620.67 )
-interval = 0.2
-addmovement = Vector2( 0, 2 )
-bulletspeed = 1.5
-randmovement = 0.0
-
 [node name="mirrorblaster5" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 342.999, -2612.67 )
+position = Vector2( 195.986, -2641.56 )
 interval = 0.2
 addmovement = Vector2( 0, 2 )
 bulletspeed = 1.5
@@ -317,24 +263,6 @@ max_difficulty = 3
 
 [node name="d1" type="Node2D" parent="Enemies"]
 position = Vector2( 39.9989, -1566.81 )
-
-[node name="mirrorblaster10" parent="Enemies/d1" instance=ExtResource( 2 )]
-position = Vector2( 279.459, -1470.15 )
-interval = 0.5
-addmovement = Vector2( -30, 5 )
-bulletspeed = 0.1
-randmovement = 0.0
-min_difficulty = 1
-max_difficulty = 3
-
-[node name="mirrorblaster11" parent="Enemies/d1" instance=ExtResource( 2 )]
-position = Vector2( 202.084, -1478.15 )
-interval = 0.5
-addmovement = Vector2( 30, 5 )
-bulletspeed = 0.1
-randmovement = 0.0
-min_difficulty = 1
-max_difficulty = 3
 
 [node name="destructable" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 90.246, -747.827 )
@@ -454,7 +382,12 @@ __meta__ = {
 }
 
 [node name="scenechanger" parent="Tutorial Elememts/Label" instance=ExtResource( 13 )]
-position = Vector2( 153.634, -4413.02 )
+position = Vector2( 153.634, -5591.99 )
+
+[node name="skr_timecrack" type="Sprite" parent="Tutorial Elememts/Label/scenechanger"]
+position = Vector2( 94.5083, 0 )
+scale = Vector2( 6.41596, 1 )
+texture = ExtResource( 12 )
 
 [node name="Label3" type="Label" parent="Tutorial Elememts"]
 margin_left = 202.0
@@ -491,6 +424,23 @@ text = "press shift to focus"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label5" type="Label" parent="Tutorial Elememts"]
+margin_left = 114.449
+margin_top = -2810.84
+margin_right = 370.449
+margin_bottom = -2750.84
+theme = ExtResource( 7 )
+text = "gain graze by letting 
+a bullet pass near your
+ hitbox"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="skr_grazearea_tutorial" type="Sprite" parent="Tutorial Elememts/Label5"]
+position = Vector2( 121.74, 96.2587 )
+texture = ExtResource( 14 )
 
 [node name="trollarea" type="KinematicBody2D" parent="Tutorial Elememts"]
 script = ExtResource( 11 )

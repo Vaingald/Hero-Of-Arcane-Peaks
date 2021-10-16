@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/liito2_titlescreen.mp3-6aa93ad6c0e6922371beca7d182f3bdc.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/liito2_titlescreen.mp3"
+dest_files=[ "res://.import/liito2_titlescreen.mp3-6aa93ad6c0e6922371beca7d182f3bdc.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

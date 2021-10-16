@@ -1,7 +1,7 @@
 extends Camera2D
 
-export var yspeed = 2
-export var xspeed = 0
+export var yspeed = 2.0
+export var xspeed = 0.0
 onready var gameobject = get_node("/root/MainGameobject")
 
 func _ready():
@@ -13,10 +13,10 @@ func _ready():
 	$GameUI/Control/savefileinfo.text = gameobject.savefile + ".vsave"
 	$GameUI/Control/indi_difficulty.frame = gameobject.difficultyicon
 	
-func _input(event):
+func get_input():
 	if Input.is_action_just_pressed("pause"):
 		$GameUI/pausemenu.visible = true
-		get_tree().paused = true
+		#get_tree().paused = true
 
 func _process(delta):
 	get_input()

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/liito2_ffmountains.mp3-72f765e6888b873e0b1655e706dbe1c0.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/liito2_ffmountains.mp3"
+dest_files=[ "res://.import/liito2_ffmountains.mp3-72f765e6888b873e0b1655e706dbe1c0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -28,10 +28,13 @@ func get_input():
 	if Input.is_action_just_pressed("mv_focus"):
 		speed /= 2
 		$AnimatedSprite.play("focus")
+		$CPUParticles2D.visible = true
 	
 	if Input.is_action_just_released("mv_focus"):
 		speed *= 2
 		$AnimatedSprite.play("fly")
+		$CPUParticles2D.visible = false
+		
 	velocity = Vector2()
 	
 	if Input.is_action_pressed('mv_right'):

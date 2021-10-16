@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Sprites/liito2-bullet1.png" type="Texture" id=1]
 [ext_resource path="res://Entity/bullet1.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/skr_glow1.png" type="Texture" id=3]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 1
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 4, 4 )
@@ -11,7 +15,18 @@ extents = Vector2( 4, 4 )
 ]]
 script = ExtResource( 2 )
 
+[node name="glow" type="Sprite" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.290196 )
+material = SubResource( 1 )
+position = Vector2( 0.0350742, -0.175385 )
+scale = Vector2( 2.19042, 2.19042 )
+z_index = -20
+z_as_relative = false
+texture = ExtResource( 3 )
+
 [node name="Sprite" type="Sprite" parent="."]
+rotation = -0.523599
 z_index = 2
 z_as_relative = false
 texture = ExtResource( 1 )

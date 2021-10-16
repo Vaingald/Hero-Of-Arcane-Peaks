@@ -96,7 +96,7 @@ __meta__ = {
 
 [node name="musicmanager" type="Node" parent="."]
 script = ExtResource( 6 )
-audiopath = "res://Audio/Music/hero_of_the_arcane_peaks_seikes_revenge_theme.mp3"
+audiopath = "res://Audio/Music/gogo.wav"
 
 [node name="Label" type="Label" parent="."]
 modulate = Color( 0.556863, 0.913725, 0.721569, 1 )
